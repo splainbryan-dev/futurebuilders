@@ -2,29 +2,35 @@
 
 A free educational app where kids pick an age group, then explore trades
 (Electrician, Chef, Carpenter, Plumber, Mechanic, Farmer, Nurse, Firefighter,
-Artist & Designer, Software Developer) via a short video + facts + a quiz.
-Content is adaptive across three tiers: ages 5-8, 9-12, 13-17. Completing a
-quiz earns a "passport stamp" for that trade, tracked in the header.
+Artist & Designer, Software Developer, Pastor/Ministry, AI & Robotics) via a
+short video + facts + a quiz. Content is adaptive across three tiers: ages
+5-8, 9-12, 13-17. Completing a quiz — or skipping it — earns a "passport
+stamp" for that trade, tracked in the header.
 
-## Adding videos
+## Videos
 
-Each trade in `src/data/trades.js` has a `videoId` field — the part of a
-YouTube URL after `watch?v=`. Trades with `videoId: null` show a "video
-coming soon" placeholder instead. To add one:
+Each trade in `src/data/trades.js` has a `video` field, one of:
 
-1. Find a video you've actually watched and are comfortable with — check
-   there are no ads for the wrong audience, comments are off or moderated,
-   and the "up next" suggestions on the video aren't questionable.
-2. Copy the ID from the URL (e.g. `dQw4w9WgXcQ` from
-   `youtube.com/watch?v=dQw4w9WgXcQ`) and set `videoId: 'dQw4w9WgXcQ'`.
+- `{ type: 'youtube', id: '...' }` — plays inline via `youtube-nocookie.com`,
+  click-to-load so it doesn't ping YouTube until a kid taps play. Used for
+  Electrician and Firefighter.
+- `{ type: 'external', url: '...', source: '...' }` — a "Watch video" button
+  that opens the video on its own site in a new tab. Used for the other 8
+  trades, linking to the U.S. Department of Labor's CareerOneStop video
+  library — official, ad-free, no comments section. (Not embedded inline
+  since iframe-embedding wasn't confirmed to work on that site.)
+- `video: null` — shows a "video coming soon" placeholder.
 
-Videos load via `youtube-nocookie.com` (YouTube's privacy-enhanced embed
-domain) and only fetch anything from YouTube after a kid taps play — this
-keeps the app from pinging YouTube's trackers just from viewing the page,
-which matters if you publish this under Google Play's Designed for Families
-program or need COPPA compliance.
+All 10 trades currently have a video. To swap a CareerOneStop link for an
+embedded YouTube one later, just change the field to `{ type: 'youtube', id: '...' }`
+— same checklist as before applies (watch it fully, check for ads/comments/
+suggested-video quality before using it in a kids' app).
 
-Currently filled in: Electrician, Firefighter. The other 8 are placeholders.
+## Quiz
+
+Tapping a trade badge shows facts + a video, then two options: "Take the
+quiz" or "Skip quiz, get stamp" — both award the passport stamp, so reading
+the quiz isn't a gate to finishing a trade.
 
 ## Run locally
 
@@ -64,3 +70,24 @@ Then build/run from Android Studio as usual.
 - All data is currently free of ads and stored only in the browser's
   `localStorage` (age group + earned stamps) — no accounts, no tracking,
   matching the "free educational purposes" goal.
+
+## Home screen artwork
+
+The trade-selection screen (`TradeSplash.jsx`) now renders your generated
+artwork (`public/images/home-splash.png`) directly, with invisible tappable
+buttons positioned on top of each card. The coordinates for those tap zones
+live in `src/data/splashLayout.js` as fractions of the image's width/height,
+so they scale with the image at any screen size.
+
+I mapped these by sampling pixel colors in the image to find each card's
+edges — they should be close, but if a tap zone feels slightly off after
+testing on a phone, nudge the `x0`/`x1`/`y0`/`y1` values for that trade in
+`splashLayout.js` (0 = left/top edge of image, 1 = right/bottom edge).
+
+The "Badges Earned" counter in the top-right of the artwork is static in the
+image, so a live counter is overlaid on top of it (`BADGE_COUNTER_BOX` in the
+same file) showing the real count out of 12 trades.
+
+Note: the image is ~2.8MB, which is fine for web but worth compressing
+(e.g. via TinyPNG or `vite-plugin-image-optimizer`) before an Android build,
+since Play Store and mobile data users are more size-sensitive.

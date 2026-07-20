@@ -20,7 +20,7 @@ export const TRADES = [
     color: '#FFC857',
     tagline: 'Powers up homes and buildings',
     learnMore: { label: 'US Bureau of Labor Statistics: Electricians', url: 'https://www.bls.gov/ooh/construction-and-extraction/electricians.htm' },
-    videoId: 'qUghl4zbsBo',
+    video: { type: 'youtube', id: 'qUghl4zbsBo' },
     facts: {
       young: [
         'Electricians make sure lights and outlets work safely.',
@@ -51,7 +51,7 @@ export const TRADES = [
     color: '#FF6B35',
     tagline: 'Turns ingredients into amazing meals',
     learnMore: { label: 'US Bureau of Labor Statistics: Chefs and Head Cooks', url: 'https://www.bls.gov/ooh/food-preparation-and-serving/chefs-and-head-cooks.htm' },
-    videoId: null, // TODO: add a verified kid-appropriate video ID
+    video: { type: 'external', url: 'https://www.careeronestop.org/Videos/careeronestop-videos.aspx?videocode=35101100', source: 'CareerOneStop (U.S. Department of Labor)' },
     facts: {
       young: [
         'Chefs cook yummy food for lots of people.',
@@ -82,7 +82,7 @@ export const TRADES = [
     color: '#8B5E34',
     tagline: 'Builds things out of wood',
     learnMore: { label: 'US Bureau of Labor Statistics: Carpenters', url: 'https://www.bls.gov/ooh/construction-and-extraction/carpenters.htm' },
-    videoId: null, // TODO: add a verified kid-appropriate video ID
+    video: { type: 'external', url: 'https://www.careeronestop.org/Videos/careeronestop-videos.aspx?videocode=47203100', source: 'CareerOneStop (U.S. Department of Labor)' },
     facts: {
       young: [
         'Carpenters build things out of wood, like chairs and houses.',
@@ -113,7 +113,7 @@ export const TRADES = [
     color: '#3B6E8F',
     tagline: 'Keeps water flowing where it should',
     learnMore: { label: 'US Bureau of Labor Statistics: Plumbers, Pipefitters, and Steamfitters', url: 'https://www.bls.gov/ooh/construction-and-extraction/plumbers-pipefitters-and-steamfitters.htm' },
-    videoId: null, // TODO: add a verified kid-appropriate video ID
+    video: { type: 'external', url: 'https://www.careeronestop.org/Videos/careeronestop-videos.aspx?videocode=47215200', source: 'CareerOneStop (U.S. Department of Labor)' },
     facts: {
       young: [
         'Plumbers fix pipes so water goes where it should.',
@@ -144,7 +144,7 @@ export const TRADES = [
     color: '#4B4B4B',
     tagline: 'Fixes cars and engines',
     learnMore: { label: 'US Bureau of Labor Statistics: Automotive Service Technicians and Mechanics', url: 'https://www.bls.gov/ooh/installation-maintenance-and-repair/automotive-service-technicians-and-mechanics.htm' },
-    videoId: null, // TODO: add a verified kid-appropriate video ID
+    video: { type: 'external', url: 'https://www.careeronestop.org/Videos/careeronestop-videos.aspx?videocode=49302300', source: 'CareerOneStop (U.S. Department of Labor)' },
     facts: {
       young: [
         'Mechanics fix cars when something breaks.',
@@ -175,7 +175,7 @@ export const TRADES = [
     color: '#6E8B3D',
     tagline: 'Grows the food we eat',
     learnMore: { label: 'US Bureau of Labor Statistics: Farmers, Ranchers, and Other Agricultural Managers', url: 'https://www.bls.gov/ooh/management/farmers-ranchers-and-other-agricultural-managers.htm' },
-    videoId: null, // TODO: add a verified kid-appropriate video ID
+    video: { type: 'external', url: 'https://www.careeronestop.org/Videos/careeronestop-videos.aspx?videocode=11901300', source: 'CareerOneStop (U.S. Department of Labor)' },
     facts: {
       young: [
         'Farmers grow fruits, vegetables, and grains.',
@@ -206,7 +206,7 @@ export const TRADES = [
     color: '#D6536D',
     tagline: 'Helps people feel better',
     learnMore: { label: 'US Bureau of Labor Statistics: Registered Nurses', url: 'https://www.bls.gov/ooh/healthcare/registered-nurses.htm' },
-    videoId: null, // TODO: add a verified kid-appropriate video ID
+    video: { type: 'external', url: 'https://www.careeronestop.org/Videos/careeronestop-videos.aspx?videocode=29114100', source: 'CareerOneStop (U.S. Department of Labor)' },
     facts: {
       young: [
         'Nurses help take care of people who are sick or hurt.',
@@ -237,7 +237,7 @@ export const TRADES = [
     color: '#C1272D',
     tagline: 'Keeps people safe from fire',
     learnMore: { label: 'US Bureau of Labor Statistics: Firefighters', url: 'https://www.bls.gov/ooh/protective-service/firefighters.htm' },
-    videoId: 'HZSPNU_0VvM',
+    video: { type: 'youtube', id: 'HZSPNU_0VvM' },
     facts: {
       young: [
         'Firefighters put out fires to keep everyone safe.',
@@ -268,7 +268,7 @@ export const TRADES = [
     color: '#7A4CA0',
     tagline: 'Creates things people love to look at',
     learnMore: { label: 'US Bureau of Labor Statistics: Craft and Fine Artists', url: 'https://www.bls.gov/ooh/arts-and-design/craft-and-fine-artists.htm' },
-    videoId: null, // TODO: add a verified kid-appropriate video ID
+    video: { type: 'external', url: 'https://www.careeronestop.org/Videos/careeronestop-videos.aspx?videocode=27101300', source: 'CareerOneStop (U.S. Department of Labor)' },
     facts: {
       young: [
         'Artists make paintings, drawings, and sculptures.',
@@ -299,7 +299,7 @@ export const TRADES = [
     color: '#2E86AB',
     tagline: 'Builds the apps and games we use',
     learnMore: { label: 'US Bureau of Labor Statistics: Software Developers', url: 'https://www.bls.gov/ooh/computer-and-information-technology/software-developers.htm' },
-    videoId: null, // TODO: add a verified kid-appropriate video ID
+    video: { type: 'external', url: 'https://www.careeronestop.org/Videos/careeronestop-videos.aspx?videocode=15125200', source: 'CareerOneStop (U.S. Department of Labor)' },
     facts: {
       young: [
         'Programmers write instructions that tell computers what to do.',
@@ -321,6 +321,68 @@ export const TRADES = [
       young: { q: 'What do programmers write to tell computers what to do?', options: ['Instructions (code)', 'Songs', 'Recipes for food'], answer: 0 },
       mid: { q: 'What is a mistake in a program called?', options: ['A bug', 'A feature', 'A glitch fruit'], answer: 0 },
       teen: { q: 'What tool helps teams track changes to code?', options: ['Git (version control)', 'A spreadsheet', 'A calendar'], answer: 0 },
+    },
+  },
+  {
+    id: 'pastor',
+    name: 'Bible Studies',
+    icon: '📖',
+    color: '#6B4C9A',
+    tagline: 'Shares stories of faith, hope, and kindness',
+    learnMore: { label: 'O*NET OnLine (US Dept. of Labor): Clergy', url: 'https://www.onetonline.org/link/summary/21-2011.00' },
+    video: { type: 'external', url: 'https://www.careeronestop.org/Videos/careeronestop-videos.aspx?videocode=21201100', source: 'CareerOneStop (U.S. Department of Labor)' },
+    facts: {
+      young: [
+        'A pastor leads a church and helps people learn about God and the Bible.',
+        'One Bible story tells of a man who stopped to help a hurt stranger on the road, even though he was busy — that story teaches us to be kind to everyone.',
+        'Pastors often teach that being gentle, honest, and helpful makes the people around you feel loved.',
+      ],
+      mid: [
+        'Pastors lead worship services, teach Bible lessons, and support their church community through good times and hard times.',
+        'In the story of David and Goliath, a young shepherd boy faced a giant with courage and faith instead of fear — a story often used to teach bravery.',
+        'A common Christian teaching, sometimes called the Golden Rule, is to treat others the way you would want to be treated.',
+      ],
+      teen: [
+        'Becoming a pastor usually involves years of study, often a college degree followed by seminary (graduate-level religious training).',
+        'In the story of the prodigal son, a father forgives his son who made poor choices and welcomes him home — a story often used to teach forgiveness and grace.',
+        'Pastors often counsel people through grief, big life decisions, and questions about purpose, in addition to leading services.',
+      ],
+    },
+    quiz: {
+      young: { q: 'What does the story of the kind stranger on the road teach?', options: ['Be kind to everyone', 'Always run fast', 'Never talk to strangers'], answer: 0 },
+      mid: { q: 'What did the young shepherd boy face with courage and faith?', options: ['A giant', 'A storm', 'A dragon'], answer: 0 },
+      teen: { q: 'What does a pastor usually complete after college to prepare for ministry?', options: ['Seminary', 'Medical school', 'Law school'], answer: 0 },
+    },
+  },
+  {
+    id: 'ai',
+    name: 'AI & Robotics',
+    icon: '🤖',
+    color: '#00A99D',
+    tagline: 'Teaches computers to learn and solve problems',
+    learnMore: { label: 'US Bureau of Labor Statistics: Computer and Information Research Scientists', url: 'https://www.bls.gov/ooh/computer-and-information-technology/computer-and-information-research-scientists.htm' },
+    video: { type: 'external', url: 'https://www.careeronestop.org/Videos/careeronestop-videos.aspx?videocode=15122100', source: 'CareerOneStop (U.S. Department of Labor)' },
+    facts: {
+      young: [
+        'AI stands for "artificial intelligence" — it means teaching a computer to do things that normally need a person, like recognizing a picture of a cat.',
+        'People who work with AI show the computer thousands of examples, the same way you learn what a dog looks like by seeing lots of dogs.',
+        'AI helps your phone understand your voice, helps games react to you, and helps robots move around.',
+      ],
+      mid: [
+        'AI researchers build "algorithms" — step-by-step instructions — that let computers find patterns in huge amounts of data.',
+        'This process of a computer improving at a task by studying examples is called "machine learning."',
+        'AI is already part of everyday life: voice assistants, movie recommendations, and self-driving car features all use it.',
+      ],
+      teen: [
+        'Most computer and information research scientists — the people who invent new AI techniques — have a master\'s degree in computer science or a related field.',
+        'A key building block of modern AI is the "neural network," a system loosely inspired by how neurons connect in a brain, used to recognize patterns in data.',
+        'Because AI systems learn from data, researchers also have to watch for bias — if the examples they train on are unfair or unbalanced, the AI can make unfair decisions too.',
+      ],
+    },
+    quiz: {
+      young: { q: 'What does AI stand for?', options: ['Artificial intelligence', 'Automatic ice cream', 'Airplane instructions'], answer: 0 },
+      mid: { q: 'What is it called when a computer improves at a task by studying examples?', options: ['Machine learning', 'Computer cooking', 'Data napping'], answer: 0 },
+      teen: { q: 'What do AI researchers have to watch out for when training on data?', options: ['Bias in the examples', 'Running out of ink', 'Too much sunlight'], answer: 0 },
     },
   },
 ];

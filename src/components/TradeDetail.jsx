@@ -21,7 +21,7 @@ export default function TradeDetail({ trade, tierId, onBack, onStamp, alreadySta
         </div>
       </div>
 
-      <VideoEmbed videoId={trade.videoId} title={`${trade.name}: what the job is like`} />
+      <VideoEmbed video={trade.video} title={`${trade.name}: what the job is like`} />
 
       <ul className="facts-list">
         {facts.map((fact, i) => <li key={i}>{fact}</li>)}
@@ -40,9 +40,14 @@ export default function TradeDetail({ trade, tierId, onBack, onStamp, alreadySta
       </p>
 
       {!showQuiz && !alreadyStamped && (
-        <button className="start-quiz-btn" onClick={() => setShowQuiz(true)}>
-          Take the quiz →
-        </button>
+        <div className="stamp-actions">
+          <button className="start-quiz-btn" onClick={() => setShowQuiz(true)}>
+            Take the quiz →
+          </button>
+          <button className="skip-quiz-btn" onClick={() => onStamp(trade.id)}>
+            Skip quiz, get stamp
+          </button>
+        </div>
       )}
 
       {alreadyStamped && !showQuiz && (

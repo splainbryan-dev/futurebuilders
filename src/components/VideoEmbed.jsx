@@ -1,12 +1,16 @@
 import { useState } from 'react';
 
-// Facade pattern: shows a thumbnail + play button and only loads the actual
-// YouTube iframe (and its tracking) after the kid taps play. Uses
-// youtube-nocookie.com, YouTube's privacy-enhanced embed domain.
-export default function VideoEmbed({ videoId, title }) {
+// Handles two kinds of video sources:
+// - { type: 'youtube', id }: click-to-load facade using youtube-nocookie.com,
+//   so YouTube's tracking doesn't fire until a kid actually taps play.
+// - { type: 'external', url, source }: a "Watch video" button that opens the
+//   video on its own site in a new tab (used for CareerOneStop's official,
+//   ad-free career videos, which we don't embed since we couldn't confirm
+//   they allow iframe embedding).
+export default function VideoEmbed({ video, title }) {
   const [playing, setPlaying] = useState(false);
 
-  if (!videoId) {
+  if (!video) {
     return (
       <div className="video-placeholder">
         🎬 Video coming soon for this trade — for now, check out the facts below.
@@ -14,6 +18,24 @@ export default function VideoEmbed({ videoId, title }) {
     );
   }
 
+  if (video.type === 'external') {
+    return (
+      <a
+        className="video-external-link"
+        href={video.url}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span className="video-external-play">▶</span>
+        <span>
+          <span className="video-external-title">Watch: {title}</span>
+          <span className="video-external-source">{video.source} · opens in a new tab</span>
+        </span>
+      </a>
+    );
+  }
+
+  // type === 'youtube'
   if (!playing) {
     return (
       <button
@@ -22,7 +44,7 @@ export default function VideoEmbed({ videoId, title }) {
         aria-label={`Play video: ${title}`}
       >
         <img
-          src={`https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`}
+          src={`https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`}
           alt=""
           className="video-thumb"
         />
@@ -34,7 +56,7 @@ export default function VideoEmbed({ videoId, title }) {
   return (
     <div className="video-wrapper">
       <iframe
-        src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`}
+        src={`https://www.youtube-nocookie.com/embed/${video.id}?autoplay=1&rel=0&modestbranding=1`}
         title={title}
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
