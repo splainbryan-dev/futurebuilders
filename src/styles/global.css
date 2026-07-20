@@ -1,0 +1,424 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Atkinson+Hyperlegible:wght@400;700&display=swap');
+
+:root {
+  --navy: #1E3A5F;
+  --orange: #FF6B35;
+  --yellow: #FFC857;
+  --cream: #F5F0E6;
+  --steel: #6B7280;
+  --white: #FFFFFF;
+
+  --font-display: 'Baloo 2', system-ui, sans-serif;
+  --font-body: 'Atkinson Hyperlegible', system-ui, sans-serif;
+
+  --radius-badge: 20px;
+  --shadow-soft: 0 6px 18px rgba(30, 58, 95, 0.15);
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background: var(--cream);
+  font-family: var(--font-body);
+  color: var(--navy);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}
+
+.app-shell {
+  max-width: 720px;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: 24px 20px 48px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Age Gate ---------- */
+.age-gate {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 24px;
+}
+
+.age-gate h1 {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  margin: 0;
+  color: var(--navy);
+}
+
+.age-gate p {
+  color: var(--steel);
+  margin: 0;
+  max-width: 40ch;
+}
+
+.age-tier-grid {
+  display: grid;
+  gap: 14px;
+  width: 100%;
+  max-width: 360px;
+}
+
+.age-tier-btn {
+  border: 3px solid var(--navy);
+  background: var(--white);
+  border-radius: 16px;
+  padding: 18px;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--navy);
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.age-tier-btn:hover,
+.age-tier-btn:active {
+  background: var(--yellow);
+  transform: translateY(-2px);
+}
+
+/* ---------- Header / Passport strip ---------- */
+.passport-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 12px;
+}
+
+.passport-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--navy);
+  margin: 0;
+}
+
+.passport-title span {
+  color: var(--orange);
+}
+
+.stamp-count {
+  font-family: var(--font-display);
+  background: var(--navy);
+  color: var(--white);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.change-age {
+  background: none;
+  border: none;
+  color: var(--steel);
+  font-size: 0.85rem;
+  text-decoration: underline;
+  padding: 0;
+}
+
+/* ---------- Trade badge grid ---------- */
+.badge-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 16px;
+}
+
+.trade-badge {
+  border: none;
+  background: var(--white);
+  border-radius: var(--radius-badge);
+  box-shadow: var(--shadow-soft);
+  padding: 18px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  transition: transform 0.15s ease;
+}
+
+.trade-badge:hover,
+.trade-badge:active {
+  transform: translateY(-4px) scale(1.03);
+}
+
+.trade-badge .icon-hex {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.trade-badge .trade-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--navy);
+  text-align: center;
+}
+
+.trade-badge .stamped-check {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background: var(--orange);
+  color: var(--white);
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+/* ---------- Trade detail ---------- */
+.trade-detail {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.back-btn {
+  align-self: flex-start;
+  background: none;
+  border: 2px solid var(--navy);
+  border-radius: 10px;
+  padding: 6px 14px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.trade-hero {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.trade-hero .icon-hex-lg {
+  width: 88px;
+  height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.4rem;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  flex-shrink: 0;
+}
+
+.trade-hero h2 {
+  font-family: var(--font-display);
+  margin: 0 0 4px;
+  font-size: 1.6rem;
+}
+
+.trade-hero p {
+  margin: 0;
+  color: var(--steel);
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #000;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.video-facade {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  border-radius: 14px;
+  overflow: hidden;
+  border: none;
+  cursor: pointer;
+  background: var(--navy);
+}
+
+.video-thumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-play-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--orange);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+}
+
+.video-placeholder {
+  background: var(--white);
+  border: 2px dashed var(--steel);
+  border-radius: 14px;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--steel);
+}
+
+.facts-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.facts-list li {
+  background: var(--white);
+  border-radius: 14px;
+  padding: 14px 16px;
+  box-shadow: var(--shadow-soft);
+  line-height: 1.5;
+}
+
+.learn-more-link {
+  display: inline-block;
+  background: var(--white);
+  border: 2px dashed var(--navy);
+  border-radius: 12px;
+  padding: 12px 14px;
+  color: var(--navy);
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.learn-more-link:hover {
+  background: var(--yellow);
+}
+
+.learn-more-note {
+  margin: -8px 0 0;
+  font-size: 0.8rem;
+  color: var(--steel);
+}
+
+.start-quiz-btn {
+  background: var(--orange);
+  color: var(--white);
+  border: none;
+  border-radius: 14px;
+  padding: 16px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  box-shadow: var(--shadow-soft);
+}
+
+/* ---------- Quiz ---------- */
+.quiz-box {
+  background: var(--white);
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.quiz-question {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.quiz-option {
+  text-align: left;
+  border: 2px solid var(--navy);
+  background: var(--white);
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 1rem;
+  color: var(--navy);
+}
+
+.quiz-option.correct {
+  background: #DFF3E3;
+  border-color: #3C9A5C;
+}
+
+.quiz-option.incorrect {
+  background: #FBE1E1;
+  border-color: #C1272D;
+}
+
+.quiz-feedback {
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+
+.quiz-feedback.good { color: #3C9A5C; }
+.quiz-feedback.bad { color: #C1272D; }
+
+.stamp-btn {
+  background: var(--yellow);
+  border: none;
+  border-radius: 14px;
+  padding: 14px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--navy);
+}
+
+.empty-note {
+  text-align: center;
+  color: var(--steel);
+  padding: 40px 20px;
+}
