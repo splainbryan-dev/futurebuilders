@@ -47,7 +47,7 @@ export default function App() {
   }
 
   return (
-    <div className="app-shell">
+   <div className={`app-shell${tierId && !activeTrade ? ' full-bleed' : ''}`}>
       {!tierId && <AgeGate onSelectTier={setTierId} />}
 
       {tierId && !activeTrade && (
