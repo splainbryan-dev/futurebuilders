@@ -192,7 +192,7 @@ button:focus-visible,
 
 .img-splash-check {
   position: absolute;
-  top: -6%;
+  top: -4%;
   right: -4%;
   width: 22%;
   aspect-ratio: 1;
@@ -799,4 +799,155 @@ button:focus-visible,
   text-align: center;
   color: var(--steel);
   padding: 40px 20px;
+}
+
+/* ---------- Course CTA on trade detail ---------- */
+.course-cta {
+  background: var(--navy);
+  color: var(--white);
+  border: none;
+  border-radius: 14px;
+  padding: 16px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.course-cta-placeholder {
+  background: var(--white);
+  border: 2px dashed var(--steel);
+  border-radius: 14px;
+  padding: 14px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--steel);
+}
+
+/* ---------- Course overview ---------- */
+.course-overview {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.course-header h2 {
+  font-family: var(--font-display);
+  margin: 12px 0 4px;
+  font-size: 1.5rem;
+  color: var(--navy);
+}
+
+.course-header p {
+  margin: 0 0 10px;
+  color: var(--steel);
+}
+
+.course-progress-bar {
+  width: 100%;
+  height: 10px;
+  background: var(--white);
+  border-radius: 999px;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 2px var(--navy);
+}
+
+.course-progress-fill {
+  height: 100%;
+  background: var(--orange);
+  border-radius: 999px;
+  transition: width 0.2s ease;
+}
+
+.course-progress-label {
+  font-size: 0.8rem;
+  color: var(--steel);
+  margin-top: 6px;
+}
+
+.course-week-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.course-week-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--white);
+  border: none;
+  border-radius: 12px;
+  padding: 12px 14px;
+  box-shadow: var(--shadow-soft);
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.course-week-btn.done {
+  background: #EEF7EF;
+}
+
+.course-week-num {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--navy);
+  flex-shrink: 0;
+  min-width: 64px;
+}
+
+.course-week-title {
+  flex: 1;
+  color: var(--navy);
+}
+
+.course-week-check {
+  color: #3C9A5C;
+  font-weight: 700;
+}
+
+/* ---------- Course lesson ---------- */
+.course-lesson {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.course-lesson-eyebrow {
+  font-size: 0.8rem;
+  color: var(--steel);
+  margin: 8px 0 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.course-lesson-title {
+  font-family: var(--font-display);
+  margin: 0 0 4px;
+  font-size: 1.4rem;
+  color: var(--navy);
+}
+
+.course-lesson-section {
+  background: var(--white);
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: var(--shadow-soft);
+}
+
+.course-lesson-section h3 {
+  font-family: var(--font-display);
+  margin: 0 0 8px;
+  font-size: 1rem;
+  color: var(--orange);
+}
+
+.course-lesson-section p {
+  margin: 0;
+  line-height: 1.6;
+  color: var(--navy);
 }

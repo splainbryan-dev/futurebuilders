@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import Quiz from './Quiz';
 import VideoEmbed from './VideoEmbed';
+import { getCourse } from '../data/courses';
 
-export default function TradeDetail({ trade, tierId, onBack, onStamp, alreadyStamped }) {
+export default function TradeDetail({ trade, tierId, onBack, onStamp, alreadyStamped, onOpenCourse }) {
   const [showQuiz, setShowQuiz] = useState(false);
   const facts = trade.facts[tierId];
   const quiz = trade.quiz[tierId];
+  const course = getCourse(trade.id);
 
   return (
     <div className="trade-detail">
@@ -27,7 +29,17 @@ export default function TradeDetail({ trade, tierId, onBack, onStamp, alreadySta
         {facts.map((fact, i) => <li key={i}>{fact}</li>)}
       </ul>
 
-      <a
+      {course ? (
+        <button className="course-cta" onClick={() => onOpenCourse(trade.id)}>
+          🎓 Start the free {course.lengthWeeks}-week course
+        </button>
+      ) : (
+        <div className="course-cta-placeholder">
+          🎓 A free multi-month course for {trade.name} is coming soon.
+        </div>
+      )}
+
+      
         className="learn-more-link"
         href={trade.learnMore.url}
         target="_blank"
