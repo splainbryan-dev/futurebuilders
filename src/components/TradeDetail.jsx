@@ -40,7 +40,7 @@ export default function TradeDetail({ trade, tierId, onBack, onStamp, alreadySta
       )}
 
       
-        className="learn-more-link"
+        <a className="learn-more-link"
         href={trade.learnMore.url}
         target="_blank"
         rel="noopener noreferrer"
