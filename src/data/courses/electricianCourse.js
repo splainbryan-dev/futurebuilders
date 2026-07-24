@@ -1,0 +1,185 @@
+// Pilot 6-month (24 weekly lesson) course for the Electrician trade.
+// This is the template course — get the format right here, then the same
+// shape gets reused for the other 11 trades.
+//
+// Each lesson has:
+//   - concept: the idea being taught this week, in plain language
+//   - activity: something the kid can actually do to reinforce it — safe,
+//     no real household electrical work, no tools that could shock/burn
+//   - check: a single question to confirm the concept landed
+
+export const ELECTRICIAN_COURSE = {
+  tradeId: 'electrician',
+  title: 'Electrician Foundations',
+  lengthWeeks: 24,
+  lessons: [
+    {
+      week: 1,
+      title: 'What Is Electricity?',
+      concept: 'Everything is made of tiny particles called atoms, and atoms have even tinier parts called electrons. Electricity is electrons moving from one place to another. When electrons flow in one direction through something, that flow is called an electric current.',
+      activity: 'Rub a balloon on your hair for 20 seconds, then hold it near small pieces of paper or against a wall. The balloon picks up extra electrons from your hair, and that extra charge is strong enough to move paper or stick to the wall — you\'re seeing electrons in action.',
+      check: { q: 'What is electricity, in simple terms?', options: ['Electrons moving from place to place', 'A type of paint', 'A kind of sound wave'], answer: 0 },
+    },
+    {
+      week: 2,
+      title: 'Circuits: The Path Electricity Follows',
+      concept: 'Electricity needs a complete loop — called a circuit — to flow. If the loop is broken anywhere, the electricity stops. A circuit that\'s complete is called "closed," and one with a break in it is called "open."',
+      activity: 'Draw a simple circle on paper and label four points: battery, wire, light bulb, wire. Draw arrows showing the electricity traveling all the way around the loop and back to the battery.',
+      check: { q: 'What do we call a circuit with a break in it?', options: ['Closed', 'Open', 'Loud'], answer: 1 },
+    },
+    {
+      week: 3,
+      title: 'Conductors vs. Insulators',
+      concept: 'Materials that let electricity flow through them easily are called conductors — most metals, like copper, are great conductors. Materials that block electricity are called insulators — rubber, plastic, and wood are common examples. That\'s why wires are made of metal on the inside and covered in plastic on the outside.',
+      activity: 'Walk around your home and find 3 things you think are conductors and 3 things you think are insulators. Make a two-column list.',
+      check: { q: 'Which of these is a conductor?', options: ['Rubber', 'Copper', 'Wood'], answer: 1 },
+    },
+    {
+      week: 4,
+      title: 'Series Circuits',
+      concept: 'In a series circuit, everything is connected one after another in a single loop, like a chain. If one part of the chain breaks — like one bulb burning out — the whole circuit stops working, because there\'s no other path for the electricity to take.',
+      activity: 'Think of old-style holiday lights: if one bulb goes out and the whole string goes dark, that\'s a series circuit. Ask a family member if they\'ve ever seen this happen.',
+      check: { q: 'In a series circuit, what happens if one part breaks?', options: ['Nothing changes', 'The whole circuit stops', 'It gets brighter'], answer: 1 },
+    },
+    {
+      week: 5,
+      title: 'Parallel Circuits',
+      concept: 'In a parallel circuit, there are multiple paths for electricity to travel, like separate lanes on a highway. If one path breaks, electricity can still flow through the other paths. That\'s why the lights in your house don\'t all go out if one lightbulb burns out.',
+      activity: 'Draw two circuits side by side: a series circuit (one loop) and a parallel circuit (two loops sharing a battery). Label which one keeps working if a bulb burns out.',
+      check: { q: 'Why do parallel circuits keep working if one path breaks?', options: ['They don\'t keep working', 'Electricity can use a different path', 'They use less electricity'], answer: 1 },
+    },
+    {
+      week: 6,
+      title: 'Batteries: Storing Energy',
+      concept: 'A battery stores chemical energy and turns it into electrical energy when it\'s connected in a circuit. Batteries have two ends, called terminals — a positive (+) end and a negative (−) end — and electricity flows out of one end, through the circuit, and back into the other.',
+      activity: 'Find a battery at home (AA, AAA, or a battery pack) and look for the + and − symbols. See if you can find where they\'re marked.',
+      check: { q: 'What does a battery do?', options: ['Stores energy and releases it as electricity', 'Makes light on its own without a circuit', 'Blocks electricity completely'], answer: 0 },
+    },
+    {
+      week: 7,
+      title: 'Switches: Controlling the Flow',
+      concept: 'A switch is a simple tool that opens or closes a circuit on purpose. When you flip a light switch "on," you\'re closing the circuit so electricity can flow. When you flip it "off," you\'re opening the circuit so it can\'t.',
+      activity: 'Find 3 switches in your home (light switches, a toy with an on/off button, a remote control). For each, guess what circuit it\'s opening or closing.',
+      check: { q: 'What does turning a switch "on" do to a circuit?', options: ['Opens it', 'Closes it', 'Deletes it'], answer: 1 },
+    },
+    {
+      week: 8,
+      title: 'Static Electricity',
+      concept: 'Static electricity happens when electrons build up in one place instead of flowing in a current. This is different from the electricity in circuits — it\'s a buildup of charge that stays put until it suddenly discharges, like a spark of static shock or a bolt of lightning.',
+      activity: 'On a dry day, shuffle your socked feet on carpet and then touch a metal doorknob (gently). If you feel or hear a tiny spark, that\'s static electricity discharging.',
+      check: { q: 'How is static electricity different from a circuit\'s current?', options: ['It\'s a buildup of charge, not a flow', 'It\'s exactly the same thing', 'It only happens in batteries'], answer: 0 },
+    },
+    {
+      week: 9,
+      title: 'Electricity and Magnets',
+      concept: 'Electricity and magnetism are closely connected — when electric current flows through a wire, it creates a small magnetic field around it. This connection, called electromagnetism, is the basis for how motors and generators work, which we\'ll cover soon.',
+      activity: 'If you have a compass (or a compass app), hold it near a device that\'s plugged in and turned on, like a lamp cord. See if the needle wiggles even slightly — that\'s the magnetic field from the current.',
+      check: { q: 'What does electric current flowing through a wire create?', options: ['A magnetic field', 'A rainbow', 'Nothing at all'], answer: 0 },
+    },
+    {
+      week: 10,
+      title: 'What Is Voltage?',
+      concept: 'Voltage is the "push" behind electricity — it\'s the force that moves electrons through a circuit. You can think of it like water pressure in a hose: higher voltage means a stronger push. Batteries are usually labeled with their voltage, like 1.5V or 9V.',
+      activity: 'Find a battery and read the voltage printed on it. Compare it to another battery of a different size — do they have the same voltage?',
+      check: { q: 'What is voltage best compared to?', options: ['The color of a wire', 'Water pressure pushing electrons', 'The weight of a battery'], answer: 1 },
+    },
+    {
+      week: 11,
+      title: 'What Is Current?',
+      concept: 'Current is the actual flow of electrons through a circuit, measured in amps (short for amperes). If voltage is the "push," current is how much electricity is actually moving because of that push — like how much water is actually flowing through a hose.',
+      activity: 'Compare voltage and current using the hose analogy: draw a hose, label the water pressure as "voltage" and the amount of water flowing per second as "current."',
+      check: { q: 'What is current measured in?', options: ['Amps', 'Miles', 'Degrees'], answer: 0 },
+    },
+    {
+      week: 12,
+      title: 'What Is Resistance?',
+      concept: 'Resistance is anything that slows down the flow of electric current, kind of like a narrow section of hose that slows down water. Some materials resist current a lot (insulators), and some resist very little (conductors). Resistance is measured in ohms.',
+      activity: 'Think back to your conductors/insulators list from Week 3 — which items would have high resistance, and which would have low resistance?',
+      check: { q: 'What is resistance measured in?', options: ['Ohms', 'Volts', 'Feet'], answer: 0 },
+    },
+    {
+      week: 13,
+      title: 'Putting It Together: Voltage, Current, and Resistance',
+      concept: 'These three ideas work together in every circuit: voltage pushes the current, and resistance slows it down. Electricians actually use a simple math rule connecting all three (called Ohm\'s Law) to figure out how circuits will behave — you\'ll learn the formula in a later, more advanced course.',
+      activity: 'Explain the hose analogy to a family member in your own words: voltage is the pressure, current is the flow, resistance is anything that narrows the hose.',
+      check: { q: 'What connects voltage, current, and resistance together?', options: ['They have nothing to do with each other', 'They all work together in every circuit', 'Only current matters'], answer: 1 },
+    },
+    {
+      week: 14,
+      title: 'Reading Circuit Diagrams',
+      concept: 'Electricians use simple symbols to draw circuits instead of drawing realistic pictures. A zigzag line means resistance, a battery is shown as parallel lines of different lengths, and a lightbulb is shown as a circle with an X inside.',
+      activity: 'Look up "basic circuit symbols" with a parent or search a kids\' science site, and try drawing a simple diagram using a battery symbol, a switch symbol, and a lightbulb symbol.',
+      check: { q: 'Why do electricians use symbols instead of realistic drawings?', options: ['It\'s faster and clearer to read', 'Symbols look nicer', 'Realistic drawings are against the rules'], answer: 0 },
+    },
+    {
+      week: 15,
+      title: 'How LEDs Work',
+      concept: 'LED stands for "light-emitting diode." Unlike old-style bulbs that glow because a wire gets hot, an LED makes light through a special material that glows when electricity passes through it in the right direction. That\'s why LEDs use much less energy and last much longer.',
+      activity: 'If you have an LED flashlight or LED string lights, look closely at the small bulbs. Notice they don\'t get hot to the touch the way an old incandescent bulb would.',
+      check: { q: 'Why do LEDs use less energy than old-style bulbs?', options: ['They don\'t make light through heat', 'They are bigger', 'They use two batteries'], answer: 0 },
+    },
+    {
+      week: 16,
+      title: 'Motors: Electricity Into Motion',
+      concept: 'A motor uses electricity and magnets together to create spinning motion. Current flows through a coil of wire sitting inside a magnetic field, and the interaction pushes the coil to spin. Motors are what make fans, toy cars, and blenders move.',
+      activity: 'Find a battery-powered toy or fan at home. Open the battery compartment (with permission) and see if you can find the small motor inside.',
+      check: { q: 'What two things does a motor use together to create motion?', options: ['Electricity and magnets', 'Water and gears', 'Sound and light'], answer: 0 },
+    },
+    {
+      week: 17,
+      title: 'Generators: Motion Into Electricity',
+      concept: 'A generator is basically a motor working in reverse — instead of using electricity to create motion, it uses motion to create electricity. Spinning a coil of wire inside a magnetic field pushes electrons to flow, generating current. Power plants use huge generators to make the electricity that reaches your home.',
+      activity: 'If you\'ve ever used a hand-crank flashlight or a bike-powered phone charger, that\'s a generator at work — the spinning motion from your hand or the wheel makes electricity.',
+      check: { q: 'How is a generator different from a motor?', options: ['A generator turns motion into electricity, a motor turns electricity into motion', 'They are exactly the same thing', 'A generator only works underwater'], answer: 0 },
+    },
+    {
+      week: 18,
+      title: 'Where Electricity Comes From: Renewable Energy',
+      concept: 'Electricity for homes comes from power plants, and some of those plants use renewable sources like the sun (solar panels) or wind (wind turbines) instead of burning fuel. Solar panels turn sunlight directly into electricity using special materials that release electrons when light hits them.',
+      activity: 'Look for solar panels in your neighborhood or on a calculator you might have at home — some simple calculators are solar-powered. See if it stops working when you cover the panel.',
+      check: { q: 'How do solar panels make electricity?', options: ['By burning sunlight', 'By turning sunlight directly into electricity', 'By storing wind'], answer: 1 },
+    },
+    {
+      week: 19,
+      title: 'Why Home Wiring Is Only for Trained Electricians',
+      concept: 'The electricity flowing through the outlets in your home is much stronger than a battery, and it can seriously hurt or even kill someone who touches exposed wires without the right training and safety equipment. That\'s exactly why electricians go through years of training before they\'re allowed to work on home wiring — it takes real expertise to do safely.',
+      activity: 'Talk with a parent or guardian about the electrical safety rules in your home — like not touching outlets with wet hands or plugging in too many things at once.',
+      check: { q: 'Why do only trained electricians work on home wiring?', options: ['It\'s too expensive for anyone else', 'Household current can seriously hurt someone without proper training', 'It\'s just tradition'], answer: 1 },
+    },
+    {
+      week: 20,
+      title: 'Tools Electricians Use',
+      concept: 'Electricians use special tools to do their job safely, like a multimeter (which measures voltage, current, and resistance), wire strippers (which remove plastic coating from wires), and insulated gloves (which protect against shocks). Each tool has a specific safety purpose.',
+      activity: 'Look up a picture of a multimeter with a parent and see if you can find where you\'d read the voltage measurement on its display.',
+      check: { q: 'What does a multimeter measure?', options: ['Voltage, current, and resistance', 'Only the time of day', 'The color of a wire'], answer: 0 },
+    },
+    {
+      week: 21,
+      title: 'Circuit Breakers and Fuses: Safety Devices',
+      concept: 'A circuit breaker (or a fuse in older homes) automatically shuts off electricity if too much current tries to flow through a circuit, which prevents overheating and fires. If too many devices draw power at once, the breaker "trips" and cuts the power until someone resets it.',
+      activity: 'Ask a parent to show you the circuit breaker panel in your home (usually in a basement, garage, or closet) — you don\'t need to touch it, just see what it looks like.',
+      check: { q: 'What does a circuit breaker do?', options: ['Makes electricity stronger', 'Shuts off power automatically if there\'s too much current', 'Charges batteries'], answer: 1 },
+    },
+    {
+      week: 22,
+      title: 'Understanding a Power Bill',
+      concept: 'Electricity is measured in units called kilowatt-hours (kWh) — that\'s how much energy a device uses over time. A power company charges homes based on how many kilowatt-hours they use each month, which is why leaving lights on or running big appliances longer costs more money.',
+      activity: 'If your family has an electric bill available, look at it together and find the kilowatt-hour number for the month.',
+      check: { q: 'What is a kilowatt-hour used to measure?', options: ['Sound', 'How much energy is used over time', 'Water pressure'], answer: 1 },
+    },
+    {
+      week: 23,
+      title: 'Becoming an Electrician: The Real Career Path',
+      concept: 'Most electricians learn through an apprenticeship — a multi-year program where you work alongside an experienced electrician while also taking classes, usually 4-5 years total. After that, electricians take a test to become licensed, which is required before they can legally work on their own.',
+      activity: 'Revisit the "Learn More" link on the Electrician trade card in the app (the official U.S. Bureau of Labor Statistics page) and find one new fact about the job that wasn\'t covered in this course.',
+      check: { q: 'How do most electricians train for the job?', options: ['A multi-year apprenticeship plus classes', 'Watching one video', 'No training is needed'], answer: 0 },
+    },
+    {
+      week: 24,
+      title: 'Final Project: Build a Simple Flashlight Circuit',
+      concept: 'This final week puts everything together: a battery for voltage, a switch to control the flow, and an LED as the output — a complete, working circuit, just like the ones we\'ve been learning about all course. This mirrors the real first step many electricians take when learning hands-on basics.',
+      activity: 'With an adult and a basic electronics kit (widely sold for kids, using low-voltage batteries only — never household current), build a simple circuit: battery, switch, and LED connected in a loop. Test that flipping the switch turns the LED on and off.',
+      check: { q: 'What three basic parts make up the final project circuit?', options: ['Battery, switch, and LED', 'Battery, hose, and magnet', 'Switch, paper, and water'], answer: 0 },
+    },
+  ],
+};
